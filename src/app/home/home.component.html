@@ -1,0 +1,164 @@
+<ngx-slick-carousel class="main-slider slider">
+    <div ngxSlickItem class="slider-item " style="background-image:url('assets/images/banner-web-final-1536x768.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 offset-lg-6 offset-md-6">
+                    <div class="slider-caption">
+                        <span class="lead">Store Rau Má Mix </span>
+                        <h1 class="mt-2 mb-5"><span class="text-color">10% off </span>Tuần lễ vàng</h1>
+                        <a href="#" class="btn btn-main">Đặt Ngay Nào</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ngxSlickItem class="slider-item" style="background-image:url('assets/images/BANNER-2-1024x512.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 offset-lg-6 offset-md-6">
+                    <div class="slider-caption">
+                        <span class="lead">Giảm 10%</span>
+                        <h1 class="mt-2 mb-5"><span class="text-color">10%</span> Tuần lễ vàng</h1>
+                        <a href="#" class="btn btn-main">Đặt Ngay Nào</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ngxSlickItem class="slider-item" style="background-image:url('assets/images/BANNER-3-1024x512.jpg'); background-position:50%;background-repeat:no-repeat;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 offset-lg-6 offset-md-6">
+                    <div class="slider-caption">
+                        <span class="lead">Giảm 10% </span>
+                        <h1 class="mt-2 mb-5"><span class="text-color">10%</span> Tuần lễ vàng</h1>
+                        <a href="#" class="btn btn-main">Đặt Ngay Nào</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ngx-slick-carousel>
+<section class="category section pt-3 pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 col-md-6" *ngFor="let ban of banner">
+                <div class="cat-item mb-4 mb-lg-0">
+                    <img src="{{ban.imageUrl}}" alt="" class="img-fluid">
+                    <div class="slider-caption">
+                        <span class="lead">Giảm 10%</span>
+                        <h1 class="mt-2 mb-5"><span class="text-color">10%</span> Tuần lễ vàng</h1>
+                        <a href="#" class="btn btn-main">Đặt Ngay Nào</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section products-main">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="title text-center">
+                    <h2>Menu_Mix</h2>
+                    <p>Dáng xinh da đẹp</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" *ngFor="let fd of foods; index as i">
+                <div class="product" *ngIf="fd.id<=16">
+                    <div class="product-wrap">
+                        <a routerLink="/product-single/{{fd.id}}"><img class="img-fluid w-100 mb-3 img-first" src="{{fd.imageUrl}}" alt="product-img" /></a>
+                        <a routerLink="/product-single/{{fd.id}}"><img class="img-fluid w-100 mb-3 img-second" src="{{fd.imageUrl}}" alt="product-img" /></a>
+                    </div>
+                    <span class="onsale">Sale</span>
+                    <div class="product-hover-overlay">
+                        <a href="#"><i class="tf-ion-android-cart"></i></a>
+                        <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title h5 mb-0"><a href="#">{{fd.name}}</a></h2>
+                        <span class="price">
+                            {{fd.price|currency:'VND'}}
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section products-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 col-md-12">
+                <img src="assets/images/Suong-sao-hat-chia.jpg" alt="Product big thumb" class="img-fluid w-100">
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="widget-featured-entries mt-5 mt-lg-0">
+                    <h4 class="mb-4 pb-3">Giảm giá</h4>
+                    <div *ngFor="let fd of foods">
+                        <div class="media mb-3" *ngIf="fd.id<=4 && fd.price<=30000">
+                            <a class="featured-entry-thumb" routerLink="/product-single">
+                                <img src="{{fd.imageUrl}}" alt="Product thumb" width="64" class="img-fluid mr-3">
+                            </a>
+                            <div class="media-body">
+                                <h6 class="featured-entry-title mb-0"><a href="#">{{fd.name}}</a></h6>
+                                <p class="featured-entry-meta">{{fd.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="widget-featured-entries mt-5 mt-lg-0">
+                    <h4 class="mb-4 pb-3">Món Mới</h4>
+                    <div *ngFor="let fd of foods">
+                        <div class="media mb-3" *ngIf="fd.id<=4 && fd.price>=20000">
+                            <a class="featured-entry-thumb" routerLink="/product-single">
+                                <img src="{{fd.imageUrl}}" alt="Product thumb" width="64" class="img-fluid mr-3">
+                            </a>
+                            <div class="media-body">
+                                <h6 class="featured-entry-title mb-0"><a href="#">{{fd.name}}</a></h6>
+                                <p class="featured-entry-meta">{{fd.price}} đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="features border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="feature-block">
+                    <i class="tf-ion-android-bicycle"></i>
+                    <div class="content">
+                        <h5>Free Ship</h5>
+                        <p>Đơn đặt hàng chỉ từ 100.000đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="feature-block">
+                    <i class="tf-wallet"></i>
+                    <div class="content">
+                        <h5>Giá cả hợp lí</h5>
+                        <p>Tiết kiệm nhiều tiền</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="feature-block">
+                    <i class="tf-clock"></i>
+                    <div class="content">
+                        <h5>Giao nhanh trong vòng 2 giờ</h5>
+                        <p>Trong khu vực Q.Bình Tân</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

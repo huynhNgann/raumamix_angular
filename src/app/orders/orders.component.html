@@ -1,0 +1,56 @@
+<section class="user-dashboard page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-5 col-sm-12 col-lg-3">
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link active" routerLink="/order">Đơn đặt hàng</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Đã giao</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Địa chỉ</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Tài khoản</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Đăng xuất</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-7 col-sm-12 col-lg-9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Đơn hàng</th>
+                            <th scope="col">Ngày</th>
+                            <th scope="col">Trạng thái</th>
+                            <th scope="col">Tổng</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">#1012</th>
+                            <td>11-2-2022</td>
+                            <td>Đã thanh toán</td>
+                            <td>90.000đ</td>
+                            <td><a routerLink="/order" class="btn btn-dark btn-small">Xem đơn hàng</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">#2214</th>
+                            <td>8-3-2022</td>
+                            <td>Đã thanh toán</td>
+                            <td>100.000đ</td>
+                            <td><a routerLink="/order" class="btn btn-dark btn-small">Xem đơn hàng</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

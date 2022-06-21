@@ -1,0 +1,118 @@
+<!-- <section class="page-header">
+    <div class="overly"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="content text-center">
+                    <h1 class="mb-3">Cart</h1>
+                    <p>Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day multiply you’ll which</p>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent justify-content-center">
+                            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="cart shopping page-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="product-list">
+                    <form class="cart-form">
+                        <table class="table shop_table shop_table_responsive cart" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="product-thumbnail"> </th>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove"> </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="cart_item" *ngFor="let cart of cart.items">
+                                    <td class="product-thumbnail" data-title="Thumbnail">
+                                        <a routerLink="/product-single/{{cart.food.id}}"><img [src]="cart.food.imageUrl" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""></a>
+                                    </td>
+
+                                    <td class="product-name" data-title="Product">
+                                        <a href="#">{{cart.food.name}}</a>
+                                    </td>
+
+                                    <td class="product-price" data-title="Price">
+                                        <span class="amount"><span class="currencySymbol"><pre wp-pre-tag-3=""></pre>
+                                        </span>{{cart.food.price}}</span><br>
+                                    </td>
+
+
+                                    <td class="product-quantity" data-title="Quantity"><br>
+                                        <div class="quantity"><br>
+                                            <select #quantitySelect [value]="cart.quantity" (change)="changeQuantity(cart, quantitySelect.value)">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>                               
+
+
+                                            </select>
+                                        </div><br>
+                                    </td><br>
+                                    <td class="product-subtotal" data-title="Total"><br>
+                                        <span class="amount"><br>
+                                    <span class="currencySymbol">
+                                    <pre wp-pre-tag-3=""></pre>
+                                    </span>{{cart.price|currency:'VND'}}</span><br>
+                                    </td>
+
+                                    <td class="product-remove" data-title="Remove"><br>
+                                        <button href="#" (click)="removeFromCart(cart)" class="remove" aria-label="Remove this item" data-product_id="30" data-product_sku="">×</button><br>
+                                    </td><br>
+                                </tr>
+
+                            </tbody><br>
+                        </table><br>
+                    </form><br>
+                </div><br>
+            </div><br>
+        </div>
+        <p>
+            <div class="row justify-content-end"><br>
+                <div class="col-lg-4"><br>
+                    <div class="cart-info card p-4 mt-4"><br>
+                        <h4 class="mb-4">Tổng Đơn Hàng</h4>
+
+                        <p>
+                            <ul class="list-unstyled mb-4"><br>
+                                <li class="d-flex justify-content-between pb-2 mb-3"><br>
+                                    <h5>Tổng:</h5><br>
+                                    <span>{{cart.items.length}}</span><br>
+                                </li>
+                                <p>
+                                    <li class="d-flex justify-content-between pb-2 mb-3"><br>
+                                        <h5>Shipping:</h5><br>
+                                        <span>
+                                        </span><br>
+                                    </li>
+                                </p>
+                                <p>
+                                    <li class="d-flex justify-content-between pb-2"><br>
+                                        <h5>Total</h5><br>
+                                        <span></span>
+                                        <!-- {{cart|currency:'VND'}} -->
+                                        <br>
+                                    </li><br>
+                            </ul><br>
+                            <a href="#" class="btn btn-main btn-small">Proceed to checkout</a><br>
+                    </div><br>
+                </div><br>
+            </div><br>
+    </div><br>
+</section>
